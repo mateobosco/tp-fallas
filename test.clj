@@ -70,7 +70,7 @@
 
 ;; ===========================
 
-(println "El regalo es:" (nombres_tabla (index_min_distance reglas (ask preguntas))))
+; (println "El regalo es:" (nombres_tabla (index_min_distance reglas (ask preguntas))))
 
 
 
@@ -127,25 +127,18 @@
   )
 )
 
-(def maximos (map reference-max [1 0 -1]))
+(def ref-maximos (map reference-max result))
 
-(def minimos (map reference-min [1 0 -1]))
+(def ref-minimos (map reference-min result))
 
 
 (defn create-vector [v1 v2]
   (vector v1 v2)
   )
 
-(println maximos)
-(println minimos)
+(println ref-maximos)
+(println ref-minimos)
 
 
-(def aux (map create-vector maximos minimos))
+(println (mapcat create-vector ref-maximos ref-minimos))
 
-
-(println (concat  (map create-vector maximos minimos) ))
-
-(println (map concat aux))
-
-
-(println (concat [1 2] [3 4] [5 6]))
